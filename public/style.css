@@ -1,0 +1,171 @@
+:root {
+  --button-shadow: 0px 0px 10px 0px rgba(34, 34, 34, 0.8);
+}
+
+body {
+  background-color: #464646;
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, Helvetica, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', "Inter-Bold", "Inter-SemiBold", "Inter-Medium",
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  padding: 0;
+}
+
+.app {
+  background-color: #464646;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.navbar {
+  box-shadow: var(--button-shadow);
+  left: 0;
+  top: 0;
+  width: 100%;
+  background-color: #717171;
+  overflow: hidden;
+}
+
+/* Navbar links */
+.navbar a {
+  float: left;
+  text-align: center;
+  padding: 12px;
+  color: white;
+  text-decoration: none;
+  font-size: 17px;
+}
+
+/* Navbar links on mouse-over */
+.navbar a:hover {
+  background-color: #000;
+}
+
+.download {
+  display: flex;
+  justify-content: flex-end;
+}
+
+/* Current/active navbar link */
+.active {
+  background-color: #04AA6D;
+}
+
+.nav-right {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.main {
+  outline: none;
+  height: 100%;
+  width: 80%;
+  background-color: #464646;
+}
+
+
+
+.lang {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  padding: 0 20px 0 0;
+}
+
+.switch {
+  position: relative;
+  display: flex;
+  width: 40px;
+  height: 28px;
+  justify-content: flex-end;
+}
+
+.switch input { 
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #ccc;
+  -webkit-transition: .4s;
+  transition: .4s;
+}
+
+.slider:before {
+  position: absolute;
+  content: "";
+  height: 20px;
+  width: 20px;
+  left: 4px;
+  bottom: 4px;
+  background-color: white;
+  -webkit-transition: .4s;
+  transition: .4s;
+}
+
+input:checked + .slider {
+  background-color: #2196F3;
+}
+
+input:focus + .slider {
+  box-shadow: 0 0 1px #2196F3;
+}
+
+input:checked + .slider:before {
+  -webkit-transform: translateX(12px);
+  -ms-transform: translateX(12px);
+  transform: translateX(12px);
+}
+
+/* Rounded sliders */
+.slider.round {
+  border-radius: 28px;
+}
+
+.slider.round:before {
+  border-radius: 50%;
+}
+
+/* Add responsiveness - will automatically display the navbar vertically instead of horizontally on screens less than 500 pixels */
+@media screen and (max-width: 700px) {
+  .main {
+    width: 100%;
+  }
+  .app {
+    display: flex;
+    flex-direction: row;
+  }
+  .navbar {
+    float: none;
+    display: block;
+    width: 55px;
+    height: 100vh;
+    flex-direction: column;
+    box-shadow: 10px 10px 10px 10px rgba(34, 34, 34, 0.8);;
+  }
+  .navbar a {
+    float: none;
+    display: block;
+  }
+  .nav-right {
+    display: flex;
+    vertical-align: middle;
+    flex-direction: column;
+    align-items: center;
+  }
+  .lang {
+    padding: 5px 0 15px 0;
+  }
+}
