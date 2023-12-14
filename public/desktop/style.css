@@ -209,6 +209,7 @@ input:checked + .slider:before {
 
 /* Add responsiveness - will automatically display the navbar vertically instead of horizontally on screens less than 500 pixels */
 @media screen and (max-width: 700px) {
+  .full-text { display: none; }
   .cv {
     width: 100%;
   }
@@ -245,6 +246,6 @@ input:checked + .slider:before {
   }
   .welcome {
     padding-top: 20px;
-    padding-left: 80px;
+    padding-left: 60px;
   }
 }
