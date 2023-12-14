@@ -16,19 +16,20 @@ body {
 .app {
   background-color: #464646;
   width: 100%;
-  height: 100%;
+  height: 100vh;
   display: flex;
   flex-direction: column;
   align-items: center;
 }
 
 .navbar {
-  box-shadow: var(--button-shadow);
+  box-shadow: 0px 0px 5px 0px rgba(34, 34, 34, 0.8);
   left: 0;
-  top: 0;
   width: 100%;
   background-color: #717171;
   overflow: hidden;
+  position: fixed;
+  top: 0;
 }
 
 /* Navbar links */
@@ -61,14 +62,76 @@ body {
   justify-content: flex-end;
 }
 
-.main {
+.cv {
   outline: none;
-  height: 100%;
+  height: 100vh;
   width: 80%;
   background-color: #464646;
 }
 
+.welcome {
+  outline: none;
+  height: fit-content;
+  width: 90%;
+  padding-top: 80px;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+}
 
+.about {
+  background-color: #e0e0e0;
+  height: fit-content;
+  text-align: justify;
+  border: 1px solid gray;
+  margin: 20px;
+  border-radius: 10px;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  padding: 20px;
+  align-items: center;
+}
+
+h1 {
+  text-align: center;
+  text-transform: uppercase;
+  color: #04AA6D;
+  margin-block-start: 0px;
+  margin-block-end: 0px;
+  margin-inline-start: 0px;
+  margin-inline-end: 0px;
+}
+
+p {
+  text-indent: 20px;
+  text-align: justify;
+  letter-spacing: 2px;
+}
+
+/* button */
+
+.button {
+  background-color: #04AA6D; /* Green */
+  border: none;
+  color: white;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  cursor: pointer;
+  -webkit-transition-duration: 0.4s; /* Safari */
+  transition-duration: 0.4s;
+  border-radius: 10px;
+}
+
+.button:hover {
+  box-shadow: 0 10px 10px 0 rgba(0,0,0,0.24),0 17px 50px 0 rgba(0,0,0,0.19);
+}
+
+/* button:end */
 
 .lang {
   display: flex;
@@ -146,12 +209,13 @@ input:checked + .slider:before {
 
 /* Add responsiveness - will automatically display the navbar vertically instead of horizontally on screens less than 500 pixels */
 @media screen and (max-width: 700px) {
-  .main {
+  .cv {
     width: 100%;
   }
   .app {
     display: flex;
     flex-direction: row;
+    align-items: flex-start;
   }
   .navbar {
     float: none;
@@ -159,19 +223,28 @@ input:checked + .slider:before {
     width: 55px;
     height: 100vh;
     flex-direction: column;
-    box-shadow: 10px 10px 10px 10px rgba(34, 34, 34, 0.8);;
+    box-shadow: 0px 0px 10px 5px rgba(34, 34, 34, 0.8);
   }
   .navbar a {
     float: none;
     display: block;
+  }
+  .active {
+    width: 100vw;
   }
   .nav-right {
     display: flex;
     vertical-align: middle;
     flex-direction: column;
     align-items: center;
+    border: 0px;
+    margin: 0px;
   }
   .lang {
     padding: 5px 0 15px 0;
+  }
+  .welcome {
+    padding-top: 20px;
+    padding-left: 80px;
   }
 }
